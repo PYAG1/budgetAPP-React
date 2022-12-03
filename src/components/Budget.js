@@ -4,7 +4,7 @@ import { currency } from "./utilities";
 
 
 
-export default function Budget({name,max,amount,oneExADD}){
+export default function Budget({name,max,amount,oneExADD,hidebuttons}){
 
    /* const classNames=[]
     if(amount > max){
@@ -16,7 +16,7 @@ export default function Budget({name,max,amount,oneExADD}){
 
 
     return(
-        <div className="my-5 mx-3" >
+        <div className="my-2 mx-3" >
         <Card className="card border border-primary  "  style={{height:170}}>
             <div className="card-body">
 
@@ -27,14 +27,14 @@ export default function Budget({name,max,amount,oneExADD}){
                 </div>
 
                 {max && (<ProgressBar className="rounded-pill" variant={getProgress(amount,max)} min={0} max={max} now={amount} />)}
-                <Stack direction="horizontal" gap="2" className='mt-4'>
+               { !hidebuttons && <Stack direction="horizontal" gap="2" className='mt-4'>
                   
                  <Button style={{width:130}} variant="outline-primary ms-auto" onClick={oneExADD}>Add</Button>
                  <Button style={{width:130}} variant="outline-primary">View Expense</Button>
 
 
 
-                </Stack>
+                </Stack>}
 
             </div>
 

@@ -8,6 +8,7 @@ import React from 'react';
 import { useBudgets } from './context/context';
 import ADDEXP from './components/ADDEXP';
 import Uncategorized from './components/Uncategorized';
+import Total from './components/total';
 
 function App() {
 const [showAddBudgetModal,setShowAdd] = React.useState(false)
@@ -32,12 +33,14 @@ setShowAddexp(true)
     </div>
     </Stack>
 
-    <div style={{display:'grid',gridTemplateColumns: 'repeat(auto-fill,minmax(300px,1fr))',gap:'1rem', alignItems:'flex-start'}}>
+    <div style={{display:'grid',gridTemplateColumns: 'repeat(auto-fill,minmax(300px,1fr))',gap:'10px', alignItems:'flex-start'}}>
       {budgets.map((item)=>{
           const amountv= getbudgets(item.id).reduce((total,expense) => total + expense.amount , 0) 
      return (
 <Budget key={item.id} name={item.name} amount={amountv} max={item.max} oneExADD={()=>openEXPmod(item.id)}/>)}
 )}
+<Uncategorized oneExADD={openEXPmod}/>
+  <Total/>
     </div>
     <ADDBUD
      show={showAddBudgetModal} handleClose={()=>setShowAdd(false)}
@@ -49,7 +52,7 @@ setShowAddexp(true)
 
     
     />
-    <Uncategorized/>
+    
 
 
     </div>

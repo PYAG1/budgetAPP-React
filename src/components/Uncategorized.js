@@ -7,7 +7,7 @@ import { UNCAT } from '../context/context'
 export default function Uncategorized(props) {
     const { getbudgets} = useBudgets()
     const amount= getbudgets(UNCAT).reduce((total,expense) => total + expense.amount , 0) 
-    if(amount=== 0)return null
+    if(amount === 0)return null
   return (
     <div>
         <Budget name="Uncategorised" amount={amount} {...props}/>
