@@ -5,6 +5,7 @@ import useLocalStorage from "../hooks/uselocal";
 const BudgetsContext= React.createContext()
 
 export const UNCAT= "Uncategorised";
+
 export function useBudgets(){
 return useContext(BudgetsContext)
 }
@@ -30,6 +31,12 @@ setbudgets(prevBud => {
 })}
 
 function deletebudget({id}){
+    setexpenses(prevE=>{
+        return prevE.map(expe => {
+            if(expe.budgetId !== id)return expe
+            return {...expe, budgetId: UNCAT}
+        })
+    })
     setbudgets(prevBud => {
         return prevBud.filter(item=> item.id !== id)
     })

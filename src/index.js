@@ -9,7 +9,7 @@ import { Conprovider } from './context/context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <div>
+  <div style={{height:"100vh", backgroundColor:"#9b9b9b"}}>
     <Conprovider>
     <App />
     </Conprovider>
