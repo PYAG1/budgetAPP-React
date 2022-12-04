@@ -32,7 +32,7 @@ setShowAddexp(true)
     <h1 className='me-auto' style={{color:'white'}}>Buntu</h1>
     <div>
       <Button onClick={()=> setShowAdd(true)} >Add Budget</Button>
-      <Button variant="light" onClick={openEXPmod}>Add Expense</Button>
+      <Button variant="light" onClick={openEXPmod} className="mx-2">Add Expense</Button>
     
     </div>
     </Stack>
