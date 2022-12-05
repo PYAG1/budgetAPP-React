@@ -8,7 +8,9 @@ Budgets do not get cleared when the page is refreshed.
 
 This app was created using React.js and Reactbootstrap.
 
-It was fun making this because I was introduced to new concepts in React
+It was fun making this because I was introduced to new concepts in React.
+
+check it out: https://budgetapppyag.netlify.app/
 
 
 CONCEPTS USED
